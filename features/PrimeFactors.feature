@@ -5,7 +5,7 @@ Feature: Prime Factors
         Then it returns an empty collection
 
     Scenario Outline: Returns a prime number
-        When I generate the prime factors of prime <prime>
+        When I generate the prime factors of <prime>
         Then it returns list <prime>
 
         Examples:
@@ -14,3 +14,14 @@ Feature: Prime Factors
         | 3     |
         | 7     |
         | 23    |
+
+    Scenario Outline: Returns two or more prime factors
+        When I generate the prime factors of <non-prime>
+        Then it returns list <factors>
+
+        Examples:
+        | non-prime | factors |
+        | 4         | 2, 2    |
+        | 6         | 2, 3    |
+        | 8         | 2, 2, 2 |
+        | 9         | 3, 3    | 
